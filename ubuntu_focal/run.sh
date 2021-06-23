@@ -1,8 +1,10 @@
 #/bin/bash
 if which docker >/dev/null; then
     CONTAINERS=docker
-else
+elif which podman >/dev/null; then
     CONTAINERS=podman
+else
+    echo "No provider was found."
 fi
 
 $CONTAINERS image rm nginx-build-buster
