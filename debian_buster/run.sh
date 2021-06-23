@@ -11,4 +11,4 @@ $CONTAINERS run --name nginx-build-buster -it -d nginx-build-buster
 $CONTAINERS exec nginx-build-buster bash -c "mkdir /deb ; mv /usr/src/nginx_*.deb /deb"
 $CONTAINERS cp nginx-build-buster:/deb .
 sleep 2
-$CONTAINERS
+$CONTAINERS rm -f nginx-build-buster
