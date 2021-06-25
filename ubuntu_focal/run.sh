@@ -5,6 +5,7 @@ elif which podman >/dev/null; then
     CONTAINERS=podman
 else
     echo "No provider was found."
+    exit
 fi
 
 $CONTAINERS image rm nginx-build-buster
